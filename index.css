@@ -1,628 +1,312 @@
-<<<<<<< HEAD
 @font-face {
-    font-family: 'Arita-dotum-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'UhBeeQUEENJ';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeQUEENJ.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
-  .spoka * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
-  
-  body{
-    font-family: 'Arita-dotum-Medium';
-  
-    background-color: rgb(255, 205, 67);
-    justify-content: center;
-    margin: 0;
-  }
-  
-  /* 빛 애니메이션 */
-  
-  h2{
-    font-size: 20px;
-  }
-  p{
-    font-size: 15px;
-  }
-  h5 {
-    /* font-family: 'Arial'; */
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 3.5rem;
-    line-height: 0.75;
-  }
-  
-  span {
-    display: block;
-    margin: 0.2em;
-  }
-  
-  span:not(.light) {
-    opacity: 0;
-    animation: flashText .5s ease-out alternate infinite;
-  }
-  
-  span.light {
-    position: relative;
-    display: inline-block;
-    
-    &:before {
-      position: absolute;
-      left: 0;
-      top: -10%;
-      width: 100%;
-      height: 120%;
-      background: #fff;
-      filter: blur(10px);
-      content: "";
-      opacity: 0;
-      animation: flash .5s ease-out alternate infinite;
-    }
-  }
-  
-  @keyframes flash{
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes flashText {
-    to {
-      opacity: 0.15;
-    }
-  }
-  
-  /* 콘텐츠 박스 */
-  .gallery{
-    /* width: 500px; */
-    /* display: flex; */
-  }
-  
-  .content_box{
-    display: flex;
-    flex-wrap: wrap; /*반응형으로 조절!!*/
-    justify-content: center;
-  }
-  
-  .content{
-    margin: 3em;
-    border: 1em solid rgb(255, 255, 255);
-    border-bottom: 5.8em solid rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 13px 21px 30px -2px rgba(0,0,0,0.39); 
-    box-shadow: 0px 10px 13px -7px #000000, 13px 21px 30px -2px rgba(0,0,0,0.39);
-  }
-  
-  h3, footer{
-    font-size: 1em;
-    color :rgb(255, 255, 255);
-    /* font-family: 'Spoqa Han Sans'; */
-  }
-  
-  h6 {
-    margin: 0;
-    padding: 1em;
-    text-align: right;
-  
-    font-size: 0.8em;
-    font-family: 'UhBeeQUEENJ';
-  }
-  
-  .banner{
-    width: 100%;
-    height: 50em;
-    text-align: center;
-  
-    margin-bottom: 20em;
-    padding-top: 10em;
-  
-    background-color: rgb(64, 72, 75);
-    background-color: rgb(56, 102, 228);
-    border-bottom-right-radius: 1000px 300px;
-    border-bottom-left-radius: 1000px 300px;
-  }
-  
-  .check{
-    position: relative;
-    top: 22em;
-  }
-  
-  .under:hover{
-    color: rgb(37, 37, 37);
-  }
-  
-  .banner2{
-    width: 100%;
-    height: 23em;
-    text-align: center;
-  
-    margin-top: 20em;
-    padding: 5.5em;
-  
-    background-color: rgb(64, 72, 75);
-    background-color: rgb(56, 102, 228);
-  
-    /* border-top-right-radius: 500px 100px;
-    border-top-left-radius: 500px 100px; */
-  }
-  
-  /* 애니메이션 */
-  @import url('https://fonts.googleapis.com/css?family=Roboto:500,700');
-  
-  *,
-  *::before,
-  *::after {
-      box-sizing: border-box;
-  }
-  
-  body {
-      /* font-family: 'Roboto', serif; */
-      -webkit-font-smoothing: antialiased;
-       -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background-color: #dedede;
-  }
-  
-  h1 {
-      position: relative;
-      display: block;
-      margin: 0;
-      font-size: 4rem;
-      line-height: 1;
-      transform: translateY(6rem);
-      animation: up 500ms linear forwards;
-      z-index: 1;
-      /* text-shadow: 0px 1px 1px rgba(255,255,255,1); */
-      
-      &::before,
-      &::after {
-          position: absolute;
-          content: '';
-          width: 0px;
-          height: 1px;
-          left: 0;
-          background-color: rgba(0,0,0,0.2);
-          z-index: -1;
-      }
-      
-      &::before {
-          top: 1.4rem;
-          animation: draw 500ms linear 1s forwards;
-      }
-      
-      &::after {
-          bottom: 0.4rem;
-          animation: draw 500ms linear 1s forwards;
-      }
-      
-  }
-  
-  .title-container {
-      font-size: 0;
-      position: relative;
-      overflow: hidden;
-      padding-bottom: 0.4rem;
-  }
-  
-  @keyframes up {
-      
-      100% {
-          transform: translateY(0);
-      }
-      
-  }
-  
-  @keyframes draw {
-      
-      100% {
-          width: 100%;
-      }
-      
-  }
-  
-  
-  
-  /* 이미지 캡션 */
-  a {                         /*a 태그의 디자인*/
-      color: #222;   
-      text-decoration: none;
-    }
-    .items {                    /*item요소를 감싸는 부모요소*/
-      border: 1px solid while;
-      text-align: center;       /*내부 글자 배치를 중앙정렬*/
-    }
-  
-    .item {                     /*내용을 담는 item요소*/
-      display: inline-block;    /*여러 요소들을 일렬로 나열 */
-      width: 200px;
-      height: 200px;
-      position: relative;       /*내부 요소의 고정 위치 설정(1)*/
-    }
-   .caption {
-      width: 200px;
-      height: 200px;
-      background-color: #000;
-      position: absolute;       /*내부 요소의 고정 위치 설정(2)*/
-      top: 0;
-      left: 0;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;  /* 300x300 안에 padding이 적용되도록 함 */
-      padding-top: 40px;
-      opacity: 0;              /* 투명도가 처음에는 0이었지만 어떤 이벤트가 발생하면 0.5초뒤에 발생함*/
-      transition: 0.5s;        /*caption에 이벤트가 발생하여 0.5초 딜레이 후 발생시킴*/
-    }
-  
-    .item:hover .caption {    
-      opacity: 1;
-    }
-    .caption a {
-      color: #fff;
-      background-color: teal;
-      padding: 7px;
-      border-radius: 3px;
-    }
-    .caption a:hover {
-      background-color: #fff;
-      color: #000;
-  }
-  
-  /* 사진 확대하기..? */
-  @keyframes bounce {
-    0%, 100%, 20%, 53%, 80% {
-      transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
-      transform: translate3d(0, 0, 0)
-    }
-    40%,
-    43% {
-      transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
-      transform: translate3d(0, -30px, 0)
-    }
-    70% {
-      transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
-      transform: translate3d(0, -15px, 0)
-    }
-    90% {
-      transform: translate3d(0, -4px, 0)
-    }
-  }
-  
-  .bounce {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    animation-name: bounce;
-    transform-origin: center bottom
-  }
-=======
+  font-family: 'Arita-dotum-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
-    font-family: 'Arita-dotum-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'UhBeeQUEENJ';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeQUEENJ.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+.spoka * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
+
+body{
+  font-family: 'Arita-dotum-Medium';
+
+  background-color: rgb(255, 205, 67);
+  justify-content: center;
+  margin: 0;
+}
+
+/* 빛 애니메이션 */
+
+h2{
+  font-size: 20px;
+}
+p{
+  font-size: 15px;
+}
+h5 {
+  /* font-family: 'Arial'; */
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3.5rem;
+  line-height: 0.75;
+}
+
+span {
+  display: block;
+  margin: 0.2em;
+}
+
+span:not(.light) {
+  opacity: 0;
+  animation: flashText .5s ease-out alternate infinite;
+}
+
+span.light {
+  position: relative;
+  display: inline-block;
   
-  @font-face {
-    font-family: 'UhBeeQUEENJ';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeQUEENJ.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
-  .spoka * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
-  
-  body{
-    font-family: 'Arita-dotum-Medium';
-  
-    background-color: rgb(255, 205, 67);
-    justify-content: center;
-    margin: 0;
-  }
-  
-  /* 빛 애니메이션 */
-  
-  h2{
-    font-size: 20px;
-  }
-  p{
-    font-size: 15px;
-  }
-  h5 {
-    /* font-family: 'Arial'; */
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 3.5rem;
-    line-height: 0.75;
-  }
-  
-  span {
-    display: block;
-    margin: 0.2em;
-  }
-  
-  span:not(.light) {
+  &:before {
+    position: absolute;
+    left: 0;
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    background: #fff;
+    filter: blur(10px);
+    content: "";
     opacity: 0;
-    animation: flashText .5s ease-out alternate infinite;
+    animation: flash .5s ease-out alternate infinite;
   }
-  
-  span.light {
-    position: relative;
-    display: inline-block;
-    
-    &:before {
-      position: absolute;
-      left: 0;
-      top: -10%;
-      width: 100%;
-      height: 120%;
-      background: #fff;
-      filter: blur(10px);
-      content: "";
-      opacity: 0;
-      animation: flash .5s ease-out alternate infinite;
-    }
+}
+
+@keyframes flash{
+  to {
+    opacity: 1;
   }
-  
-  @keyframes flash{
-    to {
-      opacity: 1;
-    }
+}
+
+@keyframes flashText {
+  to {
+    opacity: 0.15;
   }
-  
-  @keyframes flashText {
-    to {
-      opacity: 0.15;
-    }
-  }
-  
-  /* 콘텐츠 박스 */
-  .gallery{
-    /* width: 500px; */
-    /* display: flex; */
-  }
-  
-  .content_box{
+}
+
+/* 콘텐츠 박스 */
+.gallery{
+  /* width: 500px; */
+  /* display: flex; */
+}
+
+.content_box{
+  display: flex;
+  flex-wrap: wrap; /*반응형으로 조절!!*/
+  justify-content: center;
+}
+
+.content{
+  margin: 3em;
+  border: 1em solid rgb(255, 255, 255);
+  border-bottom: 5.8em solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 13px 21px 30px -2px rgba(0,0,0,0.39); 
+  box-shadow: 0px 10px 13px -7px #000000, 13px 21px 30px -2px rgba(0,0,0,0.39);
+}
+
+h3, footer{
+  font-size: 1em;
+  color :rgb(255, 255, 255);
+  /* font-family: 'Spoqa Han Sans'; */
+}
+
+h6 {
+  margin: 0;
+  padding: 1em;
+  text-align: right;
+
+  font-size: 0.8em;
+  font-family: 'UhBeeQUEENJ';
+}
+
+.banner{
+  width: 100%;
+  height: 50em;
+  text-align: center;
+
+  margin-bottom: 20em;
+  padding-top: 10em;
+
+  background-color: rgb(64, 72, 75);
+  background-color: rgb(56, 102, 228);
+  border-bottom-right-radius: 1000px 300px;
+  border-bottom-left-radius: 1000px 300px;
+}
+
+.check{
+  position: relative;
+  top: 22em;
+}
+
+.under:hover{
+  color: rgb(37, 37, 37);
+}
+
+.banner2{
+  width: 100%;
+  height: 23em;
+  text-align: center;
+
+  margin-top: 20em;
+  padding: 5.5em;
+
+  background-color: rgb(64, 72, 75);
+  background-color: rgb(56, 102, 228);
+
+  /* border-top-right-radius: 500px 100px;
+  border-top-left-radius: 500px 100px; */
+}
+
+/* 애니메이션 */
+@import url('https://fonts.googleapis.com/css?family=Roboto:500,700');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Roboto', serif; */
+    -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
     display: flex;
-    flex-wrap: wrap; /*반응형으로 조절!!*/
+    align-items: center;
     justify-content: center;
-  }
-  
-  .content{
-    margin: 3em;
-    border: 1em solid rgb(255, 255, 255);
-    border-bottom: 5.8em solid rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 13px 21px 30px -2px rgba(0,0,0,0.39); 
-    box-shadow: 0px 10px 13px -7px #000000, 13px 21px 30px -2px rgba(0,0,0,0.39);
-  }
-  
-  h3, footer{
-    font-size: 1em;
-    color :rgb(255, 255, 255);
-    /* font-family: 'Spoqa Han Sans'; */
-  }
-  
-  h6 {
-    margin: 0;
-    padding: 1em;
-    text-align: right;
-  
-    font-size: 0.8em;
-    font-family: 'UhBeeQUEENJ';
-  }
-  
-  .banner{
-    width: 100%;
-    height: 50em;
-    text-align: center;
-  
-    margin-bottom: 20em;
-    padding-top: 10em;
-  
-    background-color: rgb(64, 72, 75);
-    background-color: rgb(56, 102, 228);
-    border-bottom-right-radius: 1000px 300px;
-    border-bottom-left-radius: 1000px 300px;
-  }
-  
-  .check{
+    min-height: 100vh;
+    background-color: #dedede;
+}
+
+h1 {
     position: relative;
-    top: 22em;
-  }
-  
-  .under:hover{
-    color: rgb(37, 37, 37);
-  }
-  
-  .banner2{
-    width: 100%;
-    height: 23em;
-    text-align: center;
-  
-    margin-top: 20em;
-    padding: 5.5em;
-  
-    background-color: rgb(64, 72, 75);
-    background-color: rgb(56, 102, 228);
-  
-    /* border-top-right-radius: 500px 100px;
-    border-top-left-radius: 500px 100px; */
-  }
-  
-  /* 애니메이션 */
-  @import url('https://fonts.googleapis.com/css?family=Roboto:500,700');
-  
-  *,
-  *::before,
-  *::after {
-      box-sizing: border-box;
-  }
-  
-  body {
-      /* font-family: 'Roboto', serif; */
-      -webkit-font-smoothing: antialiased;
-       -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background-color: #dedede;
-  }
-  
-  h1 {
-      position: relative;
-      display: block;
-      margin: 0;
-      font-size: 4rem;
-      line-height: 1;
-      transform: translateY(6rem);
-      animation: up 500ms linear forwards;
-      z-index: 1;
-      /* text-shadow: 0px 1px 1px rgba(255,255,255,1); */
-      
-      &::before,
-      &::after {
-          position: absolute;
-          content: '';
-          width: 0px;
-          height: 1px;
-          left: 0;
-          background-color: rgba(0,0,0,0.2);
-          z-index: -1;
-      }
-      
-      &::before {
-          top: 1.4rem;
-          animation: draw 500ms linear 1s forwards;
-      }
-      
-      &::after {
-          bottom: 0.4rem;
-          animation: draw 500ms linear 1s forwards;
-      }
-      
-  }
-  
-  .title-container {
-      font-size: 0;
-      position: relative;
-      overflow: hidden;
-      padding-bottom: 0.4rem;
-  }
-  
-  @keyframes up {
-      
-      100% {
-          transform: translateY(0);
-      }
-      
-  }
-  
-  @keyframes draw {
-      
-      100% {
-          width: 100%;
-      }
-      
-  }
-  
-  
-  
-  /* 이미지 캡션 */
-  a {                         /*a 태그의 디자인*/
-      color: #222;   
-      text-decoration: none;
+    display: block;
+    margin: 0;
+    font-size: 4rem;
+    line-height: 1;
+    transform: translateY(6rem);
+    animation: up 500ms linear forwards;
+    z-index: 1;
+    /* text-shadow: 0px 1px 1px rgba(255,255,255,1); */
+    
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        width: 0px;
+        height: 1px;
+        left: 0;
+        background-color: rgba(0,0,0,0.2);
+        z-index: -1;
     }
-    .items {                    /*item요소를 감싸는 부모요소*/
-      border: 1px solid while;
-      text-align: center;       /*내부 글자 배치를 중앙정렬*/
+    
+    &::before {
+        top: 1.4rem;
+        animation: draw 500ms linear 1s forwards;
     }
-  
-    .item {                     /*내용을 담는 item요소*/
-      display: inline-block;    /*여러 요소들을 일렬로 나열 */
-      width: 200px;
-      height: 200px;
-      position: relative;       /*내부 요소의 고정 위치 설정(1)*/
+    
+    &::after {
+        bottom: 0.4rem;
+        animation: draw 500ms linear 1s forwards;
     }
-   .caption {
-      width: 200px;
-      height: 200px;
-      background-color: #000;
-      position: absolute;       /*내부 요소의 고정 위치 설정(2)*/
-      top: 0;
-      left: 0;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;  /* 300x300 안에 padding이 적용되도록 함 */
-      padding-top: 40px;
-      opacity: 0;              /* 투명도가 처음에는 0이었지만 어떤 이벤트가 발생하면 0.5초뒤에 발생함*/
-      transition: 0.5s;        /*caption에 이벤트가 발생하여 0.5초 딜레이 후 발생시킴*/
+    
+}
+
+.title-container {
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0.4rem;
+}
+
+@keyframes up {
+    
+    100% {
+        transform: translateY(0);
     }
-  
-    .item:hover .caption {    
-      opacity: 1;
+    
+}
+
+@keyframes draw {
+    
+    100% {
+        width: 100%;
     }
-    .caption a {
-      color: #fff;
-      background-color: teal;
-      padding: 7px;
-      border-radius: 3px;
-    }
-    .caption a:hover {
-      background-color: #fff;
-      color: #000;
+    
+}
+
+
+
+/* 이미지 캡션 */
+a {                         /*a 태그의 디자인*/
+    color: #222;   
+    text-decoration: none;
   }
-  
-  /* 사진 확대하기..? */
-  @keyframes bounce {
-    0%, 100%, 20%, 53%, 80% {
-      transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
-      transform: translate3d(0, 0, 0)
-    }
-    40%,
-    43% {
-      transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
-      transform: translate3d(0, -30px, 0)
-    }
-    70% {
-      transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
-      transform: translate3d(0, -15px, 0)
-    }
-    90% {
-      transform: translate3d(0, -4px, 0)
-    }
+  .items {                    /*item요소를 감싸는 부모요소*/
+    border: 1px solid while;
+    text-align: center;       /*내부 글자 배치를 중앙정렬*/
   }
-  
-  .bounce {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    animation-name: bounce;
-    transform-origin: center bottom
+
+  .item {                     /*내용을 담는 item요소*/
+    display: inline-block;    /*여러 요소들을 일렬로 나열 */
+    width: 200px;
+    height: 200px;
+    position: relative;       /*내부 요소의 고정 위치 설정(1)*/
   }
->>>>>>> 39d70ece333e3a10d23bbd444d3b0c69bc1f2ff0
-  
+ .caption {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    position: absolute;       /*내부 요소의 고정 위치 설정(2)*/
+    top: 0;
+    left: 0;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;  /* 300x300 안에 padding이 적용되도록 함 */
+    padding-top: 40px;
+    opacity: 0;              /* 투명도가 처음에는 0이었지만 어떤 이벤트가 발생하면 0.5초뒤에 발생함*/
+    transition: 0.5s;        /*caption에 이벤트가 발생하여 0.5초 딜레이 후 발생시킴*/
+  }
+
+  .item:hover .caption {    
+    opacity: 1;
+  }
+  .caption a {
+    color: #fff;
+    background-color: teal;
+    padding: 7px;
+    border-radius: 3px;
+  }
+  .caption a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* 사진 확대하기..? */
+@keyframes bounce {
+  0%, 100%, 20%, 53%, 80% {
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    transform: translate3d(0, 0, 0)
+  }
+  40%,
+  43% {
+    transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+    transform: translate3d(0, -30px, 0)
+  }
+  70% {
+    transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+    transform: translate3d(0, -15px, 0)
+  }
+  90% {
+    transform: translate3d(0, -4px, 0)
+  }
+}
+
+.bounce {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: bounce;
+  transform-origin: center bottom
+}
